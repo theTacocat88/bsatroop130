@@ -111,13 +111,6 @@ body {
   padding: 0;
 }
 
-#calendar-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  box-shadow: 0 10px 20px -20px rgba(2, 2, 2, 0.3);
-}
-
 .white-heading {
   /* White heading style, for <h1> */
   color: white;
@@ -131,14 +124,6 @@ body {
   font-family: Montserrat;
   margin-left: 20px;
   font: 550 20px Montserrat;
-}
-
-#announcements-header {
-  /* Announcements header styling */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: #133f25 2px solid;
 }
 
 .white-backdrop {
@@ -156,13 +141,6 @@ body {
 .white {
   /* White text style */
   color: white;
-}
-
-#event-content {
-  margin-left: 20px;
-  margin-right: 20px;
-  font-size: 16px;
-  line-height: 1.5;
 }
 
 .footer-content {
@@ -189,4 +167,37 @@ body {
   text-decoration: underline;
   padding: 5px;
   font-size: 14.2px;
+}
+
+.card {
+    /* Card styling for event details */
+    background-color: #949e89;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 10px 20px -20px rgba(2, 2, 2, 0.3);
+}
+
+#announcements-header {
+  /* Announcements header styling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: #133f25 2px solid;
+}
+
+#event-content {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 16px;
+  line-height: 1.3;
 }

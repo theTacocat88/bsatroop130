@@ -69,6 +69,9 @@ function numberToDate(num) {
 function handleDateClick(event) {
     dateContentDiv.textContent = numberToMonth(currentMonth) + " " + numberToDate(parseInt(event.target.textContent.trim())) + ", " + currentYear;
     eventContentDiv.textContent = eventContents[event.target.textContent.trim()] || "No events scheduled for this date.";
+    // Show the card with a fade-in effect
+    const card = dateContentDiv.parentElement;
+    card.style.opacity = 1;
 }
 
 // Assign IDs and event listeners to clickable dates
