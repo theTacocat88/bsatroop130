@@ -153,6 +153,7 @@ body {
   box-shadow: 3px 10px 20px rgba(0, 0, 0, 0.5);
   text-align: center;
   max-width: 800px;
+  width: 90vw;
 }
 
 #max-width-800 {
@@ -166,4 +167,73 @@ body {
 
 #today:hover {
   background-color: #5A7863;
+}
+
+/* Mobile improvements */
+@media (max-width: 768px) {
+  /* Stack navigation vertically */
+  .navigator {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .navlinks {
+    width: 80%;              /* Full-width buttons for easier tapping */
+    max-width: 300px;
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+    min-width: 90vw;
+  }
+
+  /* Improve calendar table on small screens */
+  #event-calendar {
+    max-width: 100%;
+    overflow-x: auto;        /* Allow horizontal scroll if needed, but prevent body overflow */
+  }
+
+  .cal-day {
+    font-size: 16px;         /* Slightly smaller text */
+    height: auto;            /* Flexible height */
+    min-height: 70px;
+    padding: 6px;
+  }
+
+  .prev-month, .next-month {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .cal-header {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .cal-heading {
+    font-size: 32px;
+  }
+
+  /* Prevent body horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Ensure backgrounds cover stacked elements */
+  .navigator {
+    padding-bottom: 20px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .navlinks {
+    font-size: 16px;
+    padding: 12px;
+    min-width: 90vw;
+  }
+
+  .white-heading {
+    font-size: 20px;
+  }
 }

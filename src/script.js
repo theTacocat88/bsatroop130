@@ -5,6 +5,14 @@ const event_details = document.getElementById("event-details-content");
 const event_details_heading = document.getElementById("event-details-heading");
 const calendar_heading = document.getElementById("cal-heading");
 
+const sundayHeader = document.getElementById("sunday");
+const mondayHeader = document.getElementById("monday");
+const tuesdayHeader = document.getElementById("tuesday");
+const wednesdayHeader = document.getElementById("wednesday");
+const thursdayHeader = document.getElementById("thursday");
+const fridayHeader = document.getElementById("friday");
+const saturdayHeader = document.getElementById("saturday");
+
 var eventDetails;
 var today = new Date();
 var month = today.getMonth();
@@ -32,16 +40,16 @@ var events = {
     "19": "Annual lock-in at Messiah Lutheran Church 7:00 PM to 9:00 AM",
     "20": "Pick up your child at 9:00 AM from our lock-in at Messiah Lutheran Church",
     "21": "",
-    "22": "Weekly troop meeting, 7:00 PM",
+    "22": "",
     "23": "",
     "24": "",
-    "25": "",
+    "25": "Merry Christmas!🎄",
     "26": "",
     "27": "",
     "28": "",
-    "29": "Weekly troop meeting, 7:00 PM",
+    "29": "",
     "30": "",
-    "31": ""
+    "31": "Happy New Years! 🎉",
 }
 
 function getSuffixOfDate(date) {
@@ -76,6 +84,7 @@ function addEventListeners() {
     for (let i = 0; i < dates.length; i++) {
         dates[i].addEventListener("click", displayEventDetails);
     }
+    window.addEventListener("resize", setHeaderWidth);
 }
 
 function convertMonthToString(month) {
@@ -106,6 +115,30 @@ function getToday() {
     }
   }
 }
+
+function setHeaderWidth() {
+  const width = window.innerWidth;
+
+  if(width <= 768) {
+    sundayHeader.innerHTML = "S";
+    mondayHeader.innerHTML = "M";
+    tuesdayHeader.innerHTML = "T";
+    wednesdayHeader.innerHTML = "W";
+    thursdayHeader.innerHTML = "Th";
+    fridayHeader.innerHTML = "F";
+    saturdayHeader.innerHTML = "Sa";
+  } else {
+    sundayHeader.innerHTML = "Sun.";
+    mondayHeader.innerHTML = "Mon.";
+    tuesdayHeader.innerHTML = "Tue.";
+    wednesdayHeader.innerHTML = "Wed.";
+    thursdayHeader.innerHTML = "Thu.";
+    fridayHeader.innerHTML = "Fri.";
+    saturdayHeader.innerHTML = "Sat.";
+  }
+}
+
+setHeaderWidth();
 
 addEventListeners();
 setMonth(month, year);
