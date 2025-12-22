@@ -120,6 +120,55 @@ body {
   max-width: 800px;
 }
 
+.max-width-800 {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  margin: none;
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent, 
+    black 10%, 
+    black 90%, 
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right, 
+    transparent, 
+    black 10%, 
+    black 90%, 
+    transparent
+  );
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+  mask-image: linear-gradient(#000, #fff);
+  margin: none;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.marquee-content img {
+  height: 300px;
+  margin: 0 5px;
+  flex-shrink: 0;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+
 #event-calendar {
   width: 100%;
   max-width: 800px;
