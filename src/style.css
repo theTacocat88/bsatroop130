@@ -132,6 +132,19 @@ body {
   border: 2px solid var(--border-color-3);
 }
 
+.navlinks-content {
+  font-family: Montserrat;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: var(--navigation-link-color);
+  transition: all 0.2s ease;
+  margin: 10px;
+  border: 2px solid var(--border-color-3);
+}
+
 .navlinks:hover {
   background-color: var(--border-color-2);
   border-radius: 11px;
