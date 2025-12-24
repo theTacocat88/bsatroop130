@@ -86,3 +86,10 @@
   margin: 0 auto;
   transition: all 0.2s ease-in-out;
 }
+
+@media (max-width: 600px) {
+  .gallery-item {
+    width: 200px;
+    height: auto;
+  }
+}
