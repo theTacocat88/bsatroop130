@@ -79,6 +79,23 @@ body {
   margin-bottom: 30px;
 }
 
+.cal-footer {
+  margin: 15px;
+  margin-bottom: 15px;
+}
+
+.cal-footer-container {
+  background-color: var(--content-bg-color);
+  align-items: center;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  justify-content: space-between;
+  text-align: center;
+}
+
 .prev-month, .next-month {
   font-family: Montserrat;
   font-size: 20px;
@@ -168,6 +185,14 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+#form-footer-text {
+  font-family: Montserrat;
+  font-size: 14px;
+  color: var(--text-color);
+  margin: 15px;
+  text-align: center;
 }
 
 #left-button-gallery {
