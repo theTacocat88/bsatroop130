@@ -3,21 +3,21 @@ const rightGalleryButton = document.getElementById("right-button-gallery");
 const galleryItem = document.getElementById("gallery-item");
 
 var gallery = [
-  "<img src='http://placehold.co/900x600?text=Placeholder+1' loading='eager'/>",
-  "<img src='http://placehold.co/900x600?text=Placeholder+2' loading='eager'/>",
-  "<img src='http://placehold.co/900x600?text=Placeholder+3' loading='eager'/>",
-  "<img src='http://placehold.co/900x600?text=Placeholder+4' loading='eager'/>",
-  "<img src='http://placehold.co/900x600?text=Placeholder+5' loading='eager'/>",
-  "<img src='http://placehold.co/900x600?text=Placeholder+6' loading='eager'/>",
-  "<img src='http://placehold.co/900x600?text=Placeholder+7' loading='eager'/>",
-  "<img src='http://placehold.co/900x600?text=Placeholder+8' loading='eager'/>",
-  "<img src='http://placehold.co/900x600?text=Placeholder+9' loading='eager'/>",
-  "<img src='http://placehold.co/900x600?text=Placeholder+10' loading='eager'/>",
-  "<img src='http://placehold.co/900x600?text=Placeholder+11' loading='eager'/>",
-  "<img src='http://placehold.co/900x600?text=Placeholder+12' loading='eager'/>",
-  "<img src='http://placehold.co/900x600?text=Placeholder+13' loading='eager'/>",
-  "<img src='http://placehold.co/900x600?text=Placeholder+14' loading='eager'/>",
-  "<img src='http://placehold.co/900x600?text=Placeholder+15' loading='eager'/>"
+  "<img src='https://placehold.co/900x600?text=Placeholder+1' loading='eager'/>",
+  "<img src='https://placehold.co/900x600?text=Placeholder+2' loading='eager'/>",
+  "<img src='https://placehold.co/900x600?text=Placeholder+3' loading='eager'/>",
+  "<img src='https://placehold.co/900x600?text=Placeholder+4' loading='eager'/>",
+  "<img src='https://placehold.co/900x600?text=Placeholder+5' loading='eager'/>",
+  "<img src='https://placehold.co/900x600?text=Placeholder+6' loading='eager'/>",
+  "<img src='https://placehold.co/900x600?text=Placeholder+7' loading='eager'/>",
+  "<img src='https://placehold.co/900x600?text=Placeholder+8' loading='eager'/>",
+  "<img src='https://placehold.co/900x600?text=Placeholder+9' loading='eager'/>",
+  "<img src='https://placehold.co/900x600?text=Placeholder+10' loading='eager'/>",
+  "<img src='https://placehold.co/900x600?text=Placeholder+11' loading='eager'/>",
+  "<img src='https://placehold.co/900x600?text=Placeholder+12' loading='eager'/>",
+  "<img src='https://placehold.co/900x600?text=Placeholder+13' loading='eager'/>",
+  "<img src='https://placehold.co/900x600?text=Placeholder+14' loading='eager'/>",
+  "<img src='https://placehold.co/900x600?text=Placeholder+15' loading='eager'/>"
 ];
 
 function addEventListeners() {
