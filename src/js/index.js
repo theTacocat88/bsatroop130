@@ -1,23 +1,18 @@
 const leftGalleryButton = document.getElementById("left-button-gallery");
 const rightGalleryButton = document.getElementById("right-button-gallery");
-const galleryItemOne = document.getElementById("gallery-item-one");
-const galleryItemTwo = document.getElementById("gallery-item-two");
-const galleryItemThree = document.getElementById("gallery-item-three");
+const galleryItem = document.getElementById("gallery-item");
 
 var gallery = [
-  "<img src='http://placehold.co/200x300?text=Placeholder+1'/>",
-  "<img src='http://placehold.co/200x300?text=Placeholder+2'/>",
-  "<img src='http://placehold.co/200x300?text=Placeholder+3'/>",
-  "<img src='http://placehold.co/200x300?text=Placeholder+4'/>",
-  "<img src='http://placehold.co/200x300?text=Placeholder+5'/>",
-  "<img src='http://placehold.co/200x300?text=Placeholder+6'/>",
-  "<img src='http://placehold.co/200x300?text=Placeholder+7'/>",
-  "<img src='http://placehold.co/200x300?text=Placeholder+8'/>",
-  "<img src='http://placehold.co/200x300?text=Placeholder+9'/>",
+  "<img src='http://placehold.co/900x600?text=Placeholder+1' loading='eager'/>",
+  "<img src='http://placehold.co/900x600?text=Placeholder+2' loading='eager'/>",
+  "<img src='http://placehold.co/900x600?text=Placeholder+3' loading='eager'/>",
+  "<img src='http://placehold.co/900x600?text=Placeholder+4' loading='eager'/>",
+  "<img src='http://placehold.co/900x600?text=Placeholder+5' loading='eager'/>",
+  "<img src='http://placehold.co/900x600?text=Placeholder+6' loading='eager'/>",
+  "<img src='http://placehold.co/900x600?text=Placeholder+7' loading='eager'/>",
+  "<img src='http://placehold.co/900x600?text=Placeholder+8' loading='eager'/>",
+  "<img src='http://placehold.co/900x600?text=Placeholder+9' loading='eager'/>",
 ];
-var index1 = 0;
-var index2 = 1;
-var index3 = 2;
 
 function addEventListeners() {
     rightGalleryButton.addEventListener("click", rightGalleryButtonClicked);
@@ -25,41 +20,24 @@ function addEventListeners() {
 }
 
 function rightGalleryButtonClicked() {
-  galleryItemOne.innerHTML = gallery[index1 + 3];
-  index1 += 3;
-  galleryItemTwo.innerHTML = gallery[index2 + 3];
-  index2 += 3;
-  galleryItemThree.innerHTML = gallery[index3 + 3];
-  index3 += 3;
-  if (index3 >= gallery.length) {
-    galleryItemOne.innerHTML = gallery[0];
-    index1 = 0;
-    galleryItemTwo.innerHTML = gallery[1];
-    index2 = 1;
-    galleryItemThree.innerHTML = gallery[2];
-    index3 = 2;
+  galleryItem.innerHTML = gallery[index + 1];
+  index++;
+  if (index >= gallery.length) {
+    galleryItem.innerHTML = gallery[0];
+    index = 0;
   }
 }
 
 function leftGalleryButtonClicked() {
-  galleryItemOne.innerHTML = gallery[index1 - 3];
-  index1 -= 3;
-  galleryItemTwo.innerHTML = gallery[index2 - 3];
-  index2 -= 3;
-  galleryItemThree.innerHTML = gallery[index3 - 3];
-  index3 -= 3;
-  if (index3 < 0) {
-    galleryItemOne.innerHTML = gallery[6];
-    index1 = 6;
-    galleryItemTwo.innerHTML = gallery[7];
-    index2 = 7;
-    galleryItemThree.innerHTML = gallery[8];
-    index3 = 8;
+  galleryItem.innerHTML = gallery[index - 1];
+  index--;
+  if (index < 0) {
+    galleryItem.innerHTML = gallery[8];
+    index = 8;
   }
 }
 
-galleryItemOne.innerHTML = gallery[0];
-galleryItemTwo.innerHTML = gallery[1];
-galleryItemThree.innerHTML = gallery[2];
+galleryItem.innerHTML = gallery[0];
+var index = 0;
 
 addEventListeners();

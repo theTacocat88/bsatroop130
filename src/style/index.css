@@ -34,7 +34,7 @@
 
 .gallery-item {
   transition: transform 0.2s ease-in-out;
-  width: 200px;
+  width: 600px;
   height: 300px;
   border-radius: 20px;
   overflow: hidden;
