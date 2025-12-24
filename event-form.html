@@ -31,7 +31,30 @@
             </nav>
         </header>
         <main>
-            <!--...-->
+            <form action="">
+                <label for="event-name">Event Name:</label>
+                <input type="text" id="event-name" name="event-name" required/>
+                <br>
+                <label for="event-date">Event Date:</label>
+                <input type="date" id="event-date" name="event-date" required/>
+                <br>
+                <label for="event-time">Event Time:</label>
+                <input type="time" id="event-time" name="event-time" required/>
+                <br>
+                <label for="event-location">Event Location:</label>
+                <input type="text" id="event-location" name="event-location" required/>
+                <br>
+                <label for="event-type">Event Type:</label>
+                <select id="event-type" name="event-type" required>
+                    <option value="">Select Event Type</option>
+                    <option value="meeting">Meeting</option>
+                    <option value="campout">Campout</option>
+                    <option value="service-project">Service Project</option>
+                    <option value="other">Other</option>
+                </select>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
         </main>
         <!--<script src="src/event-form.js"></script>-->
     </body>
