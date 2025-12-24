@@ -141,8 +141,10 @@ body {
   border-radius: 10px;
   background-color: var(--navigation-link-color);
   transition: all 0.2s ease;
-  margin: 10px;
+  margin: 10px auto;
   border: 2px solid var(--border-color-3);
+  display: inline-block;
+  text-align: center;
 }
 
 .navlinks:hover {
@@ -227,6 +229,18 @@ body {
 
 #form-link:visited {
   color: var(--form-link-visited-color);
+}
+
+#return-to-home {
+  font-family: Montserrat;
+  font-size: 14px;
+  color: var(--form-link-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 #left-button-gallery {
