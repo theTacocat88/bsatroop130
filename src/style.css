@@ -12,7 +12,7 @@
   --content-bg-color: #5A7863;
   --button-color: #405546;
   --shadow-color: #00000080;
-  --form-link-color: #76a7cc;
+  --form-link-color: #85b8df;
   --form-link-hover-color: #7eb4dd;
   --form-link-visited-color: #93c8f1;
 }
@@ -201,7 +201,7 @@ body {
 #form-link {
   font-family: Montserrat;
   font-size: 14px;
-  color: var(--today-color);
+  color: var(--form-link-color);
   text-decoration: none;
   transition: all 0.2s ease;
 }
