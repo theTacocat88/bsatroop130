@@ -145,11 +145,11 @@
 }
 
 #today {
-  background-color: var(--today-color);
+  background-color: var(--today-color) !important;
 }
 
 #today:hover {
-  background-color: var(--content-bg-color);
+  background-color: var(--content-bg-color) !important;
 }
 
 @media (max-width: 768px) {
