@@ -7,26 +7,43 @@ function fetchAnnouncements() {
             return response.json();
         })
         .then(data => {
-            if (Array.isArray(data.announcements)) {
-                displayAnnouncements(data.announcements);
-            } else {
-                console.error('Invalid announcements format', data);
-                announcementsContainer.innerHTML = '<p class="main-paragraph-2">No announcements available.</p>';
-            }
+            const announcementsArray = Object.entries(data.announcements)
+                .map(([key, item]) => ({ id: Number(key), ...item }))
+            displayAnnouncements(announcementsArray);
         })
         .catch(error => {
             console.error('Error fetching announcements:', error);
-            announcementsContainer.innerHTML = '<p class="main-paragraph-2">Unable to load announcements at this time.</p>';
+            announcementsContainer.innerHTML = 
+                '<p class="main-paragraph-2">Unable to load announcements at this time.</p>';
         });
 }
 
 function displayAnnouncements(announcements) {
-    for(var i = 0; i < announcements.length; i++) {
-        var announcement = announcements[i];
-        var announcementElement = document.createElement('p');
-        announcementElement.classList.add('main-paragraph-2');
-        announcementElement.textContent = announcement;
-        announcementsContainer.appendChild(announcementElement);
+    announcementsContainer.innerHTML = '';
+
+    if (announcements.length === 0) {
+        announcementsContainer.innerHTML = 
+            '<p class="main-paragraph-2">No announcements at this time.</p>';
+        return;
+    }
+
+    for (const ann of announcements) {
+        const item = document.createElement('div');
+        item.classList.add('announcement-item');
+
+        if (ann.tag) {
+            const tag = document.createElement('span');
+            tag.classList.add('announcement-tag', `tag-${ann.tag}`);
+            tag.textContent = ann.tag.charAt(0).toUpperCase() + ann.tag.slice(1);
+            item.appendChild(tag);
+        }
+
+        const text = document.createElement('p');
+        text.classList.add('main-paragraph-2');
+        text.textContent = ann.data;
+        item.appendChild(text);
+
+        announcementsContainer.appendChild(item);
     }
 }
 
