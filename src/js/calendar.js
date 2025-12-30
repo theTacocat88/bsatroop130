@@ -38,13 +38,13 @@ function fetchEvents() {
 
 function getSuffixOfDate(date) {
   switch(date) {
-    case 1: return "st";
-    case 2: return "nd";
-    case 3: return "rd";
-    case 21: return "st";
-    case 22: return "nd";
-    case 23: return "rd";
-    case 31: return "st";
+    case "1": return "st";
+    case "2": return "nd";
+    case "3": return "rd";
+    case "21": return "st";
+    case "22": return "nd";
+    case "23": return "rd";
+    case "31": return "st";
     default: return "th";
   }
 }
