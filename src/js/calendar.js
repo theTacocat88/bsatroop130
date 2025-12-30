@@ -51,8 +51,8 @@ function getSuffixOfDate(date) {
 
 function displayEventDetails(event) {
   const eventId = event.target.getAttribute("data-date-id");
-  if(events[String(year)][convertMonthToString(month)][String(eventId)] != "") {
-    eventDetails = events[String(year)][convertMonthToString(month)][String(eventId)];
+  if(events[String(year)][convertMonthToString(month)][String(eventId)]["data"] != "") {
+    eventDetails = events[String(year)][convertMonthToString(month)][String(eventId)]["data"];
   } else {
     eventDetails = "No events scheduled for this day";
   }
