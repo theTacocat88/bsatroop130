@@ -1,16 +1,8 @@
 {
     "announcements": {
         "0": {
-            "data": "There is no meeting on December 22nd or December 29th.",
+            "data": "The next meeting is scheduled for January 5th, 2026. - Posted 1/2/2026",
             "tag": "meeting"
-        },
-        "1": {
-            "data": "The next meeting is scheduled for January 5th, 2026.",
-            "tag": "meeting"
-        },
-        "2": {
-            "data": "Merry Christmas and a Happy New Year!",
-            "tag": "general"
         }
     }
 }
