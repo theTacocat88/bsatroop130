@@ -21,19 +21,21 @@ var year = today.getFullYear();
 var events;
 
 function fetchEvents() {
-  fetch('src/data/events.json')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('events.json did not respond with a successful status');
-    }
-    return response.json();
-  })
-  .then(data => {
-    events = data;
-  })
-  .catch(error => {
-    console.error('Error fetching data from events.json: ', error);
-  });
+  return fetch('src/data/events.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('events.json did not respond with a successful status');
+      }
+      return response.json();
+    })
+    .then(data => {
+      events = data;
+      return data;
+    })
+    .catch(error => {
+      console.error('Error fetching data from events.json: ', error);
+      throw error;
+    });
 }
 
 function getSuffixOfDate(date) {
@@ -122,6 +124,19 @@ function buildCalendar() {
         td.className = "cal-day";
         td.setAttribute("data-date-id", String(dayCounter));
         td.textContent = String(dayCounter);
+
+        if (events) {
+          const monthName = convertMonthToString(month);
+          const dayEvents = events[String(year)]?.[monthName]?.[String(dayCounter)] || "";
+          if (dayEvents && dayEvents !== "") {
+            const count = 1;
+            const badge = document.createElement("span");
+            badge.classList.add("event-count-badge");
+            badge.textContent = count;
+            td.appendChild(badge);
+          }
+        }
+
         dayCounter++;
       }
 
@@ -129,6 +144,39 @@ function buildCalendar() {
     }
 
     body.appendChild(tr);
+  }
+}
+
+function addEventCounts() {
+  if (!events) return;
+
+  const monthName = convertMonthToString(month);
+
+  for (let i = 0; i < dates.length; i++) {
+    const dayStr = dates[i].getAttribute("data-date-id");
+    const dayObj = events[String(year)]?.[monthName]?.[dayStr];
+
+    if (dayObj && dayObj.data && dayObj.data.trim() !== "") {
+      if (!dates[i].querySelector(".event-count-badge")) {
+        const badge = document.createElement("span");
+        badge.classList.add("event-count-badge");
+        switch(dayObj.tag.trim().toLowerCase()) {
+          case "meeting":
+            badge.style.background = "#4CAF50";
+            break;
+          case "event":
+            badge.style.background = "#2196F3";
+            break;
+          case "holiday":
+            badge.style.background = "#ffd622ff";
+            break;
+          default:
+            badge.style.background = "#FF5722";
+        }
+
+        dates[i].appendChild(badge);
+      }
+    }
   }
 }
 
@@ -163,11 +211,14 @@ function setHeaderWidth() {
 }
 
 setHeaderWidth();
-
 setMonth(month, year);
 buildCalendar();
 
 addEventListeners();
 getToday();
 
-fetchEvents();
+fetchEvents().then(() => {
+  addEventCounts();
+}).catch(err => {
+  console.error('Error loading events:', err);
+});
