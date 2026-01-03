@@ -51,13 +51,13 @@ function displayAnnouncements(announcements, lastUpdated) {
 
     if (lastUpdated) {
         const date = new Date(lastUpdated);
-        const formatted = date.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
+    const formatted = date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
         });
-        const metaDiv = document.createElement('p');
-        metaDiv.classList.add('last-updated');
+    const metaDiv = document.createElement("p");
+    metaDiv.classList.add("last-updated");
         metaDiv.textContent = `Last updated: ${formatted}`;
         announcementsContainer.appendChild(metaDiv);
     }

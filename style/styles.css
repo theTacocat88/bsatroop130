@@ -21,6 +21,14 @@ body {
   margin-bottom: 20px;
 }
 
+.small-white-heading {
+  font-family: Montserrat;
+  font-size: 18px;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 .site-footer {
   padding: 10px 0;
   text-align: center;
