@@ -1,7 +1,7 @@
 const announcementsContainer = document.getElementById('announcements');
 
 function fetchAnnouncements() {
-    fetch('src/data/announcements.json')
+    fetch('/data/announcements.json')
         .then(response => {
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             return response.json();

@@ -21,7 +21,7 @@ var year = today.getFullYear();
 var events;
 
 function fetchEvents() {
-  return fetch('src/data/events.json')
+  return fetch('/data/events.json')
     .then(response => {
       if (!response.ok) {
         throw new Error('events.json did not respond with a successful status');
